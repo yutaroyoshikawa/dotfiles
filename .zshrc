@@ -1,3 +1,6 @@
+# For Linux
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 # Set up the prompt
 
 autoload -Uz promptinit
