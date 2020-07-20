@@ -1,11 +1,23 @@
 # For Linux
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+eval "$(anyenv init -)"
+eval "$(nodenv init -)"
+
 # Set up the prompt
 
-autoload -Uz promptinit
-promptinit
-prompt adam1
+autoload -U promptinit; promptinit
+
+# change the path color
+zstyle :prompt:pure:path color white
+
+# change the color for both `prompt:success` and `prompt:error`
+zstyle ':prompt:pure:prompt:*' color cyan
+
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+
+prompt pure
 
 setopt histignorealldups sharehistory
 
@@ -16,10 +28,6 @@ bindkey -e
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
-
-# Use modern completion system
-autoload -Uz compinit
-compinit
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -70,10 +78,10 @@ zplug "junegunn/fzf-bin", \
 zplug "plugins/git",   from:oh-my-zsh
 
 # Also prezto
-zplug "modules/prompt", from:prezto
+#zplug "modules/prompt", from:prezto
 
 # Load if "if" tag returns true
-zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+#zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 
 # Run a command after a plugin is installed/updated
 # Provided, it requires to set the variable like the following:
