@@ -21,3 +21,28 @@ syntax on
 " markdownのハイライトを有効にする
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" ale
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\  'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'w0rp/ale'
+Plugin 'preservim/nerdtree'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'ryanoasis/nerd-fonts'
+
+call vundle#end()
+filetype plugin indent on
