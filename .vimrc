@@ -24,11 +24,27 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+let g:webdevicons_enable_nerdtree=1
+let g:webdevicons_enable_denite=1
 
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
+" vim-airline
+let g:airline_theme = 'deus'
+let g:airline_enable_branch = 0
+let g:airline_section_b = "%t %M"
+let g:airline_section_c = ''
+let s:sep = " %{get(g:, 'airline_right_alt_sep', '')} "
+let g:airline_section_x =
+  \ "%{strlen(&fileformat)?&fileformat:''}".s:sep.
+  \ "%{strlen(&fenc)?&fenc:&enc}".s:sep.
+  \ "%{strlen(&filetype)?&filetype:'no ft'}"
+let g:airline_section_y = '%3p%%'
+let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
+let g:airline#extensions#whitespace#enabled = 0
 
 " ale
 let g:ale_fixers = {
@@ -43,6 +59,8 @@ Plugin 'w0rp/ale'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'ryanoasis/nerd-fonts'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
