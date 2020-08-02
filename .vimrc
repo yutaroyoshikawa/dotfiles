@@ -73,6 +73,7 @@ Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 Plugin 'styled-components/vim-styled-components'
 Plugin 'mxw/vim-jsx'
 Plugin 'simeji/winresizer'
+Plugin 'cohama/lexima.vim'
 
 call vundle#end()
 filetype plugin indent on
