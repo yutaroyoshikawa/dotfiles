@@ -18,7 +18,7 @@ set title
 " シンタックスハイライト
 syntax on
 
-colorscheme zellner
+colorscheme slate
 
 " markdownのハイライトを有効にする
 set syntax=markdown
