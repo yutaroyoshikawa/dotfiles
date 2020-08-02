@@ -51,9 +51,10 @@ let g:airline#extensions#whitespace#enabled = 0
 " ale
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
-\  'javascript': ['eslint'],
+\  'javascript': ['prettier-eslint'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
