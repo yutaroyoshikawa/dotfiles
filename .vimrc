@@ -24,7 +24,7 @@ colorscheme slate
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let g:webdevicons_enable_nerdtree=1
 let g:webdevicons_enable_denite=1
@@ -70,6 +70,8 @@ Plugin 'mattn/vim-lsp-settings'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 Plugin 'styled-components/vim-styled-components'
+Plugin 'mxw/vim-jsx'
+Plugin 'simeji/winresizer'
 
 call vundle#end()
 filetype plugin indent on
