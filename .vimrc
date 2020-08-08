@@ -18,6 +18,10 @@ set title
 " シンタックスハイライト
 syntax on
 
+" 列を強調表示
+set cursorline
+hi clear CursorLine
+
 colorscheme slate
 
 " markdownのハイライトを有効にする
@@ -74,6 +78,8 @@ Plugin 'styled-components/vim-styled-components'
 Plugin 'mxw/vim-jsx'
 Plugin 'simeji/winresizer'
 Plugin 'cohama/lexima.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()
 filetype plugin indent on
