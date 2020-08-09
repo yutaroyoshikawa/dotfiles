@@ -26,6 +26,7 @@ Plugin 'simeji/winresizer'
 Plugin 'cohama/lexima.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'tikhomirov/vim-glsl'
 
 call vundle#end()
 filetype plugin indent on
@@ -88,3 +89,6 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+
+"===vim-GLSL===
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
