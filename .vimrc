@@ -1,3 +1,36 @@
+"===Vundle===
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'w0rp/ale'
+Plugin 'preservim/nerdtree'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'ryanoasis/nerd-fonts'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'mattn/vim-lsp-settings'
+Plugin 'mattn/vim-lsp-icons'
+Plugin 'hrsh7th/vim-vsnip'
+Plugin 'hrsh7th/vim-vsnip-integ'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+Plugin 'styled-components/vim-styled-components'
+Plugin 'mxw/vim-jsx'
+Plugin 'simeji/winresizer'
+Plugin 'cohama/lexima.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+
+call vundle#end()
+filetype plugin indent on
+
+"===base set===
 set number
 
 " 挿入モードでバックスペースで削除できるようにする
@@ -20,25 +53,21 @@ syntax on
 
 " 列を強調表示
 set cursorline
-hi clear CursorLine
 
+set cursorcolumn
+
+"===color===
 colorscheme slate
+highlight CursorLine guibg=#000000 ctermbg=black
+highlight CursorColumn guibg=#000000 ctermbg=black
 
-" markdownのハイライトを有効にする
-set syntax=markdown
-au BufRead,BufNewFile *.md set filetype=markdown
-
+"===NERDTree===
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let g:webdevicons_enable_nerdtree=1
 let g:webdevicons_enable_denite=1
 
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" vim-airline
+"===vim-airline===
 let g:airline_theme = 'deus'
 let g:airline_enable_branch = 0
 let g:airline_section_b = "%t %M"
@@ -52,34 +81,10 @@ let g:airline_section_y = '%3p%%'
 let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
 let g:airline#extensions#whitespace#enabled = 0
 
-" ale
+"===ale===
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'javascript': ['prettier-eslint'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
-
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'w0rp/ale'
-Plugin 'preservim/nerdtree'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'ryanoasis/nerd-fonts'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'prabirshrestha/vim-lsp'
-Plugin 'mattn/vim-lsp-settings'
-Plugin 'prabirshrestha/asyncomplete.vim'
-Plugin 'prabirshrestha/asyncomplete-lsp.vim'
-Plugin 'styled-components/vim-styled-components'
-Plugin 'mxw/vim-jsx'
-Plugin 'simeji/winresizer'
-Plugin 'cohama/lexima.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-
-call vundle#end()
-filetype plugin indent on
