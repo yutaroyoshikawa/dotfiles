@@ -58,8 +58,8 @@ set cursorcolumn
 
 "===color===
 colorscheme slate
-highlight CursorLine guibg=#000000 ctermbg=black
-highlight CursorColumn guibg=#000000 ctermbg=black
+highlight CursorLine guibg=#000000
+highlight CursorColumn guibg=#00A000
 
 "===NERDTree===
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
