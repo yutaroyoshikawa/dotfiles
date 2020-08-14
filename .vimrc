@@ -9,6 +9,7 @@ Plugin 'w0rp/ale'
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'ryanoasis/nerd-fonts'
+Plugin 'preservim/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'leafgarland/typescript-vim'
@@ -61,6 +62,8 @@ set cursorcolumn
 colorscheme slate
 highlight CursorLine guibg=#000000
 highlight CursorColumn guibg=#00A000
+highlight LineNr ctermfg=Gray
+hi CursorLineNr term=bold cterm=NONE ctermfg=Red ctermbg=NONE
 
 "===NERDTree===
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
@@ -68,19 +71,15 @@ let NERDTreeShowHidden=1
 let g:webdevicons_enable_nerdtree=1
 let g:webdevicons_enable_denite=1
 
+"===NERDCommenter===
+let g:NERDSpaceDelims=1
+let g:NERDDefaultAlign='left'
+
 "===vim-airline===
 let g:airline_theme = 'deus'
-let g:airline_enable_branch = 0
-let g:airline_section_b = "%t %M"
-let g:airline_section_c = ''
-let s:sep = " %{get(g:, 'airline_right_alt_sep', '')} "
-let g:airline_section_x =
-  \ "%{strlen(&fileformat)?&fileformat:''}".s:sep.
-  \ "%{strlen(&fenc)?&fenc:&enc}".s:sep.
-  \ "%{strlen(&filetype)?&filetype:'no ft'}"
-let g:airline_section_y = '%3p%%'
-let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
-let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline_powerline_fonts = 1
 
 "===ale===
 let g:ale_fixers = {
