@@ -8,15 +8,12 @@ eval "$(nodenv init -)"
 
 autoload -U promptinit; promptinit
 
-# change the path color
-zstyle :prompt:pure:path color white
-
-# change the color for both `prompt:success` and `prompt:error`
-zstyle ':prompt:pure:prompt:*' color cyan
-
 # turn on git stash status
 zstyle :prompt:pure:git:stash show yes
+zstyle :prompt:pure:path color white
 
+PURE_GIT_PULL=1
+PURE_PROMPT_SYMBOL='🐹❯'
 prompt pure
 
 setopt histignorealldups sharehistory
@@ -132,9 +129,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Can manage local plugins
 zplug "~/.zsh", from:local
-
-# Load theme file
-zplug 'dracula/zsh', as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
