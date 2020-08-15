@@ -28,6 +28,7 @@ Plugin 'cohama/lexima.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'alvan/vim-closetag'
 
 call vundle#end()
 filetype plugin indent on
@@ -77,6 +78,9 @@ highlight CursorLine guibg=#000000
 highlight CursorColumn guibg=#00A000
 highlight LineNr ctermfg=Gray
 hi CursorLineNr term=bold cterm=NONE ctermfg=Red ctermbg=NONE
+
+"===vim-closetag===
+let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue'
 
 "===vim-lsp===
 nnoremap <silent><C-h> :LspHover<CR>
