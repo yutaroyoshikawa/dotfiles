@@ -14,9 +14,17 @@ zstyle :prompt:pure:path color white
 
 PURE_GIT_PULL=1
 PURE_PROMPT_SYMBOL='🐹❯'
-prompt pure
 
 setopt histignorealldups sharehistory
+setopt share_history
+setopt auto_cd
+setopt auto_list
+setopt auto_menu
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
@@ -26,6 +34,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+zstyle ':completion:*' menu select=1
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -50,6 +59,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 source ~/.zplug/init.zsh
 
+zplug "sorin-ionescu/prezto"
+
 # Make sure to use double quotes
 zplug "zsh-users/zsh-history-substring-search"
 
@@ -62,6 +73,10 @@ zplug "tcnksm/docker-alias", use:zshrc
 
 # Disable updates using the "frozen" tag
 zplug "k4rthik/git-cal", as:command, frozen:1
+
+zplug "zsh-users/zsh-autosuggestions"
+
+zplug "zsh-users/zsh-completions"
 
 # Grab binaries from GitHub Releases
 # and rename with the "rename-to:" tag
