@@ -78,6 +78,10 @@ highlight CursorColumn guibg=#00A000
 highlight LineNr ctermfg=Gray
 hi CursorLineNr term=bold cterm=NONE ctermfg=Red ctermbg=NONE
 
+"===vim-lsp===
+nnoremap <silent><C-h> :LspHover<CR>
+nnoremap <silent><C-h><C-j> :LspDefinition<CR>
+
 "===NERDTree===
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
