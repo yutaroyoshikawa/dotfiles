@@ -29,6 +29,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'alvan/vim-closetag'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -78,6 +79,9 @@ highlight CursorLine guibg=#000000
 highlight CursorColumn guibg=#00A000
 highlight LineNr ctermfg=Gray
 hi CursorLineNr term=bold cterm=NONE ctermfg=Red ctermbg=NONE
+
+"===Rust===
+let g:rustfmt_autosave = 1
 
 "===vim-closetag===
 let g:closetag_filenames = '*.html,*.jsx,*.tsx,*.vue'
