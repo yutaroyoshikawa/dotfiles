@@ -4,6 +4,8 @@ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 eval "$(anyenv init -)"
 eval "$(nodenv init -)"
 
+source ~/.cargo/env
+
 # Set up the prompt
 
 autoload -U promptinit; promptinit
