@@ -21,11 +21,6 @@ setopt auto_cd
 setopt auto_list
 setopt auto_menu
 
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
