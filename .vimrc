@@ -30,6 +30,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'alvan/vim-closetag'
 Plugin 'rust-lang/rust.vim'
+Plugin 'Yggdroot/indentLine'
 
 call vundle#end()
 filetype plugin indent on
@@ -62,6 +63,10 @@ set cursorline
 
 set cursorcolumn
 
+set virtualedit=all
+
+set showcmd
+
 "===scripts===
 
 if has('vim_starting')
@@ -73,12 +78,19 @@ if has('vim_starting')
   let &t_SR .= "\e[4 q"
 endif
 
+noremap j gj
+noremap k gk
+
 "===color===
 colorscheme slate
-highlight CursorLine guibg=#000000
 highlight CursorColumn guibg=#00A000
 highlight LineNr ctermfg=Gray
 hi CursorLineNr term=bold cterm=NONE ctermfg=Red ctermbg=NONE
+
+" アンダーラインを引く(color terminal)
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" アンダーラインを引く(gui)
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
 
 "===Rust===
 let g:rustfmt_autosave = 1
