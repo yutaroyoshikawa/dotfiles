@@ -1,4 +1,14 @@
-[ -f $ZDOTDIR/.zshrc_`uname`  ] && . $ZDOTDIR/.zshrc_`uname`
+case ${OSTYPE} in
+  darwin*)
+    export PATH=$PATH:/usr/local/sbin
+    export PATH="/usr/local/sbin:$PATH"
+    export PATH="/usr/local/opt/openjdk/bin:$PATH"
+    ;;
+  linux*)
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    eval "$(dircolors -b)"
+    ;;
+esac
 
 eval "$(anyenv init -)"
 eval "$(nodenv init -)"
