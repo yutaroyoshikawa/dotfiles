@@ -8,7 +8,7 @@ source ~/.cargo/env
 # Set up the prompt
 
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_os_icon context dir vcs battery)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_os_icon os_icon dir vcs battery)
 POWERLEVEL9K_OS_ICON_BACKGROUND=024 #navyblue
 POWERLEVEL9K_OS_ICON_FOREGROUND=249 #orangered1
 POWERLEVEL9K_CUSTOM_OS_ICON_BACKGROUND=000
