@@ -1,0 +1,5 @@
+# ls
+alias ll="lsd -la"
+alias ls="lsd"
+alias tree="lsd --tree"
+
