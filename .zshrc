@@ -1,5 +1,4 @@
-# For Linux
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+[ -f $ZDOTDIR/.zshrc_`uname`  ] && . $ZDOTDIR/.zshrc_`uname`
 
 eval "$(anyenv init -)"
 eval "$(nodenv init -)"
